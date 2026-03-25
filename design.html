@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='cdesign.css') }}">
+  <title>RealEstate-Price&Category_predictor</title>
+</head>
+<body>
+  <div class="c_p">
+  <form action="/" method="POST">
+    <h2>Price And Category Predictor</h2>
+    <br>
+    <label>Bedrooms</label>
+    <input type="number" name="bedrooms" placeholder="Enter number of bedrooms" required>
+    <br>
+    <label>Bathrooms</label>
+    <input type="number" name="bathrooms" placeholder="Enter number of bathrooms" required>
+    <br>
+   <label>Toilets</label>
+    <input type="number" name="toilets" placeholder="Enter number of toilest" required>
+    <br>
+    <label>SizeSqm</label>
+    <input type="number" name="size" placeholder="Enter house size in Sqm" required>
+    <br>
+    
+    <label>Floors</label>
+    <input type="number" name="floors" placeholder="Enter number of Floors" required>
+    <br>
+    <label>Age</label>
+    <input type="number" name="age" placeholder="Enter the Age of Property" required>
+    <br>
+   <label>YearBuilt</label>
+    <input type="number" name="year" placeholder="Enter the Year built" required>
+    <br>
+    <label>DistanceToCentralBusinessDistrict</label>
+    <input type="number" name="distance" placeholder="Enter distance in km" required>
+    <br>
+    <label>State</label>
+    <select name="state" required>
+      <option value="0">Abuja</option>
+      <option value="1">Benin City</option>
+      <option value="2">Calabar</option>
+      <option value="3">Enugu</option>
+      <option value="4">Ibadan</option>
+      <option value="5">Kaduna</option>
+      <option value="6">Kano</option>
+      <option value="7">Lagos</option>
+      <option value="8">Portharcourt</option>
+      <option value="9">Warri</option>
+    </select>
+    <br>
+    <label>PropertyType</label>
+    <select name="type" required>
+      <option value="0">Bungalow</option>
+      <option value="1">Duplex</option>
+      <option value="2">Flat</option>
+      <option value="3">Mantion</option>
+      <option value="4">Penthouse</option>
+      <option value="5">Semi-Detached</option>
+      <option value="6">Studio</option>
+      <option value="7">Terrace</option>
+    </select>
+    <br>
+    <label>SwimmingPool</label>
+    <select name="pool" required>
+      <option value="0">No</option>
+      <option value="1">Yes</option>      
+    </select>
+    <br>
+    <label>Gym</label>
+    <select name="gym" required>
+      <option value="0">No</option>
+      <option value="1">Yes</option>      
+    </select>
+    <br>
+    <label>Security</label>
+    <select name="security" required>
+      <option value="0">Always</option>
+      <option value="1">Day Only</option>
+      <option value="2">No Security</option>
+      </select>
+      <br>
+    <label>Furnished</label>
+    <select name="furnished" required>
+      <option value="0">Furnish</option>
+      <option value="1">Semi-Furnished</option> 
+      <option value="2">Unfurnished</option>
+    </select>
+    <br>
+    <label>Estate</label>
+    <select name="estate" required>
+      <option value="0">No</option>
+      <option value="1">Yes</option> 
+    </select>   
+    <br>
+  <label>ParkingSpot</label>
+    <select name="parkingspot" required>
+      <option value="0">No</option>
+      <option value="1">Yes</option> 
+    </select>   
+    <button type="submit">
+      Predict Price and Category
+    </button>
+  </form>
+  {% if price %}
+  <div>
+    <p>The Preditcted Price is NGN {{price}}</p>
+       <p>The Preditcted Category is {{category}}</p>
+  </div>
+  {% endif %}
+    </div>
+</body>
+</html>
