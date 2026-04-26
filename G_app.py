@@ -4,9 +4,9 @@ import numpy as np
 import pickle
 from flask import Flask,request,render_template
 #loading linear model
-R_model=pickle.load(open("models/Linear_model.pkl","rb"))
+R_model=pickle.load(open("Linear_model.pkl","rb"))
 #loading classifier best model
-C_model=pickle.load(open("models/classifier_model.pkl","rb"))
+C_model=pickle.load(open("classifier_model.pkl","rb"))
 app=Flask( __name__ )
 @app.route("/",methods=["GET","POST"])
 def work():
